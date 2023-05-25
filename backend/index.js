@@ -3,7 +3,7 @@ const cors=require('cors')
 require('dotenv').config()
 const mongoose=require('mongoose')
 const userRouter=require('./routes/user.route')
-
+const oemRouter=require('./routes/oem.route')
 const port=process.env.port
 
 
@@ -11,8 +11,7 @@ const app=express()
 app.use(cors())
 app.use(express.json())
 app.use('/user',userRouter)
-
-
+app.use('/oem',oemRouter)
 
 
 app.listen(port,()=>{
