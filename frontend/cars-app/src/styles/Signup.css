@@ -1,0 +1,39 @@
+.signup-container{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    width: 20%;
+    margin: auto;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px 30px; 
+    border-radius: 10px;
+}
+.signup-container:hover{
+    border: 0.5px solid grey;
+    border-radius: 10px;
+}
+
+.signup-container>input,.signup-container>button{
+    margin-top: 13px;
+    padding: 5px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid grey;
+
+}
+button{
+    background-color: rgb(26, 172, 230);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 0px;
+    color: white;
+}
+button:hover{
+    background-color: rgb(82, 189, 231);
+}
+ /* .maincont{
+    display: flex;
+    margin-top: 30vh;
+ } */
