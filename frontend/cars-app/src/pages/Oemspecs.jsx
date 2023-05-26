@@ -58,7 +58,7 @@ const Oemspecs = () => {
                         <tr>
                             <th>Name</th>
                             <th>Year</th>
-                            <th>Leastprice</th>
+                            <th>Price</th>
                             <th>Available colors</th>
                             <th>Mileage</th>
                             <th>Power</th>
