@@ -6,7 +6,8 @@ import '../styles/Oemspecs.css'
 const Oemspecs = () => {
     const [cars,setCars]=useState(null)
     const [name,setName]=useState(null)
-    // console.log(name)
+    const [render,setRender]=useState(false)
+    console.log(cars)
 
     const getcars=(name=null)=>{
         axios({
@@ -16,7 +17,12 @@ const Oemspecs = () => {
         })
         .then((res)=>{
             // console.log(res)
-            setCars(res.data.cars)
+            if(res.data.msg==='Car details not found'){
+                // setCars([])
+                setRender(true)
+            }else{
+                setCars(res.data.cars)
+            }
         })
         .catch((err)=>{
             console.log(err)
@@ -30,6 +36,7 @@ const Oemspecs = () => {
 
     const handlereset=()=>{
     //   window.location.reload()
+        setRender(false)
         setName(null)
         getcars()
     }
@@ -45,7 +52,7 @@ const Oemspecs = () => {
             {name!==null&&<button onClick={handlereset} className='search'>Reset</button>}
         </div>
         {
-            cars!==null&&<div>
+            !render&&cars!==null&&<div>
                 <table>
                     <thead>
                         <tr>
@@ -64,7 +71,7 @@ const Oemspecs = () => {
                               <tr key= {el._id}>
                                 <td>{el.name}</td> 
                                 <td>{el.year}</td> 
-                                <td>{el.leastPrice}</td> 
+                                <td>{el.leastPrice} INR</td> 
                                 <td style={{display:'flex'}}>
                                 {
                                     el.availableColors.map((a)=>(
@@ -81,6 +88,9 @@ const Oemspecs = () => {
                     </tbody>
                 </table>
             </div>
+        }
+        {
+            render&&<h2>No details found. Please enter correct name</h2>
         }
     </div>
   )
