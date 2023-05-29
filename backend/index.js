@@ -4,6 +4,7 @@ require('dotenv').config()
 const mongoose=require('mongoose')
 const userRouter=require('./routes/user.route')
 const oemRouter=require('./routes/oem.route')
+const inventoryRouter=require('./routes/inventory.route')
 const port=process.env.port
 
 
@@ -12,6 +13,7 @@ app.use(cors())
 app.use(express.json())
 app.use('/user',userRouter)
 app.use('/oem',oemRouter)
+app.use('/dealer',inventoryRouter)
 
 
 app.listen(port,()=>{

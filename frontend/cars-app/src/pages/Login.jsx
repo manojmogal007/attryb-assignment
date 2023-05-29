@@ -29,10 +29,11 @@ const Login = () => {
             data:user
         })
         .then((res)=>{
-            // console.log(res)
+            console.log(res)
             if(res.data.msg==='Login successful'){
                 alert(res.data.msg)
-                localStorage.setItem('user',JSON.stringify(res.data))
+                localStorage.setItem('user',JSON.stringify(res.data.user))
+                localStorage.setItem('token',JSON.stringify(res.data.token))
             }else{
                 alert(`${res.data.msg} please try again`)
             }

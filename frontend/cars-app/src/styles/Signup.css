@@ -15,7 +15,7 @@
     border-radius: 10px;
 }
 
-.signup-container>input,.signup-container>button{
+.inputtag,.signup-container>button{
     margin-top: 13px;
     padding: 5px;
     border: none;

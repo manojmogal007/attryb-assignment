@@ -40,7 +40,7 @@ table{
    }
    input{
     padding: 4px;
-    width: 15%;
+    /* width: 15%; */
     margin-top: 15px;
     border-radius: 3px;
    }
